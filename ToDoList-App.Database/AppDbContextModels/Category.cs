@@ -4,9 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ToDoList_App.Database.AppDbContextModels
+namespace ToDoList_App.Database.AppDbContextModels;
+
+public class Category
 {
-    public class Category
-    {
-    }
+    public int Id { get; set; }
+    public string Name { get; set; }
+    
 }
