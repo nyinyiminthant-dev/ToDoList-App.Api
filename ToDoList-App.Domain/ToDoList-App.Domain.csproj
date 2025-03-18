@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <RootNamespace>ToDoList_App.Domain</RootNamespace>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Features\AddCategory\" />
+    <Folder Include="Features\AddTask\" />
+    <Folder Include="Features\EidtCategory\" />
+    <Folder Include="Features\EidtTask\" />
+    <Folder Include="Features\ReadUser\" />
+    <Folder Include="Features\ReadTask\" />
+    <Folder Include="Features\ReadCategory\" />
+    <Folder Include="Features\UserLogin\" />
+    <Folder Include="Features\UserRegister\" />
+  </ItemGroup>
+
+</Project>

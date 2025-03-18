@@ -1,0 +1,73 @@
+USE [ToDoListAppDb]
+GO
+/****** Object:  Table [dbo].[Category_Tbl]    Script Date: 3/14/2025 9:51:22 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Category_Tbl](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Category_Name] [nvarchar](50) NOT NULL,
+ CONSTRAINT [PK_Category_Tbl] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Goal_Tbl]    Script Date: 3/14/2025 9:51:22 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Goal_Tbl](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Status] [varchar](50) NOT NULL,
+	[DateTime] [datetime] NOT NULL,
+	[Duration] [int] NOT NULL,
+	[StartDate] [datetime] NOT NULL,
+	[EndDate] [datetime] NOT NULL,
+	[T_Id] [int] NOT NULL,
+ CONSTRAINT [PK_Goal_Tbl] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Task_Tbl]    Script Date: 3/14/2025 9:51:22 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Task_Tbl](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[TaskName] [nvarchar](50) NOT NULL,
+	[DateTime] [datetime] NOT NULL,
+	[Status] [varchar](10) NOT NULL,
+	[Priority] [varchar](50) NOT NULL,
+	[C_Id] [int] NOT NULL,
+ CONSTRAINT [PK_Task_Tbl] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[User_Tbl]    Script Date: 3/14/2025 9:51:22 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[User_Tbl](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Name] [nvarchar](50) NOT NULL,
+	[Email] [varchar](50) NOT NULL,
+	[Password] [varchar](50) NOT NULL,
+	[NRC] [varchar](50) NOT NULL,
+	[Gender] [varchar](20) NOT NULL,
+	[Role] [varchar](50) NOT NULL,
+	[Age] [int] NOT NULL,
+ CONSTRAINT [PK_User_Tbl] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
