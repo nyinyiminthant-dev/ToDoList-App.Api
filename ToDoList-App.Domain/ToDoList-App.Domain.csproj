@@ -16,7 +16,6 @@
     <Folder Include="Features\ReadTask\" />
     <Folder Include="Features\ReadCategory\" />
     <Folder Include="Features\UserLogin\" />
-    <Folder Include="Features\UserRegister\" />
   </ItemGroup>
 
 
