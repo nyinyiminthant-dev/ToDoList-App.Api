@@ -13,10 +13,12 @@ public class User
     public string Email { get; set; }
     public string Password { get; set; }
     public int Age { get; set; }
-    public string NRC { get; set; }
     public string Role { get; set; }
-   
-   
+    public string Status { get; set; }
+    public string OTP { get; set; }
+    public DateTime OTPExp { get; set; }
+
+
 
 
 
