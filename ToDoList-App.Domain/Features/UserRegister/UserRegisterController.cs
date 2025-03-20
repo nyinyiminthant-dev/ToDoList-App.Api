@@ -57,7 +57,7 @@ public class UserRegisterController : ControllerBase
             }
             model.IsSuccess = true;
             model.Message = response.Message;
-            model.Data = response.Data;
+          
             return Ok(model);
         }
         catch (Exception ex)
