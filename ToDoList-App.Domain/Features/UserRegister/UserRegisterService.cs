@@ -33,12 +33,13 @@ public class UserRegisterService
         }
         string hashedPassword = HashPassword(requrestModel.Password);
         string otpCode = GenerateOTP();
-        var item = new User()
+        var user = new User()
         {
             Name = requrestModel.Name,
             Age = requrestModel.Age,
             Email = requrestModel.Email,
             Password = hashedPassword,
+            Gender = requrestModel.Gender,
             Role = "user",
             Status = "N",
             OTP = otpCode,
@@ -46,7 +47,7 @@ public class UserRegisterService
 
         };
 
-        await _db.Users.AddAsync(item);
+        await _db.Users.AddAsync(user);
       var result =   await _db.SaveChangesAsync();
 
         if(result > 0)
@@ -56,6 +57,7 @@ public class UserRegisterService
             {
                 model.IsSuccess = true;
                 model.Message = "User registered successfully. Please check your email for OTP code.";
+                model.Data = user;
             }
             else
             {

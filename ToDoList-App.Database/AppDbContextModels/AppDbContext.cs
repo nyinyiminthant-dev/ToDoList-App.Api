@@ -39,7 +39,7 @@ public class AppDbContext : DbContext
             entity.HasKey(e => e.Id);
             entity.Property(e => e.Name).IsRequired().HasMaxLength(50);
             entity.Property(e => e.Age).IsRequired();
-        
+            entity.Property(e => e.Gender).IsRequired().HasMaxLength(20);
             entity.Property(e => e.Email).IsRequired().HasMaxLength(50);
             entity.Property(e => e.Password).IsRequired().HasMaxLength(50);
             entity.Property(e => e.Role).IsRequired().HasMaxLength(50);
