@@ -22,6 +22,12 @@ public class AppDbContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+
+        modelBuilder.Entity<Category>().ToTable("Category"); 
+        modelBuilder.Entity<User>().ToTable("User"); 
+        modelBuilder.Entity<Task>().ToTable("Task"); 
+        modelBuilder.Entity<Goal>().ToTable("Goal"); 
+
         modelBuilder.Entity<Category>(entity =>
         {
             entity.HasKey(e => e.Id);
@@ -31,12 +37,15 @@ public class AppDbContext : DbContext
         modelBuilder.Entity<User>(entity =>
         {
             entity.HasKey(e => e.Id);
-            entity.Property(e => e.Username).IsRequired().HasMaxLength(50);
+            entity.Property(e => e.Name).IsRequired().HasMaxLength(50);
             entity.Property(e => e.Age).IsRequired();
         
             entity.Property(e => e.Email).IsRequired().HasMaxLength(50);
             entity.Property(e => e.Password).IsRequired().HasMaxLength(50);
             entity.Property(e => e.Role).IsRequired().HasMaxLength(50);
+            entity.Property(e => e.Status).IsRequired().HasMaxLength(50);
+            entity.Property(e => e.OTP).IsRequired().HasMaxLength(50);
+            entity.Property(e => e.Otp_Exp).IsRequired();
         });
 
         modelBuilder.Entity<Task>(entity =>

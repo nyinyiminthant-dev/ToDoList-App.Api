@@ -35,14 +35,14 @@ public class UserRegisterService
         string otpCode = GenerateOTP();
         var item = new User()
         {
-            Username = requrestModel.Username,
+            Name = requrestModel.Name,
             Age = requrestModel.Age,
             Email = requrestModel.Email,
             Password = hashedPassword,
             Role = "user",
             Status = "N",
             OTP = otpCode,
-            OTPExp = DateTime.Now.AddMinutes(5)
+            Otp_Exp = DateTime.Now.AddMinutes(5)
 
         };
 
@@ -118,7 +118,7 @@ public class UserRegisterService
     {
         UserRegisterResponseModel model = new UserRegisterResponseModel();
         var user = await _db.Users.Where(u => u.Email == email)
-            .OrderByDescending(u => u.OTPExp).FirstOrDefaultAsync();
+            .OrderByDescending(u => u.Otp_Exp).FirstOrDefaultAsync();
 
         if (user is null || user.OTP != otp)
         {
@@ -127,7 +127,7 @@ public class UserRegisterService
             return model;
         }
 
-        if (user.OTPExp < DateTime.Now)
+        if (user.Otp_Exp < DateTime.Now)
         {
             model.IsSuccess = false;
             model.Message = "OTP code expired";
@@ -136,7 +136,7 @@ public class UserRegisterService
 
         user.Status = "Y";
         user.OTP = null;
-        user.OTPExp = DateTime.Now;
+        user.Otp_Exp = DateTime.Now;
         _db.Entry(user).State = EntityState.Modified;
        int result =  await _db.SaveChangesAsync();
 
