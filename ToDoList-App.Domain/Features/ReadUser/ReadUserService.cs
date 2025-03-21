@@ -36,4 +36,24 @@ public class ReadUserService
         return model;
 
     }
+
+    public async Task<UserResponseModel> GetUserByEmail (string email) { 
+
+        UserResponseModel model = new UserResponseModel();
+
+        var user = await _db.Users.Where(x => x.Email == email).FirstOrDefaultAsync();
+
+        if (user is null)
+        {
+            model.IsSuccess = false;
+            model.Message = "User not found";
+            model.Data = null!;
+        }
+
+        model.IsSuccess = true;
+        model.Message = "Success";
+        model.Data = user!;
+
+        return model;
+    }
 }

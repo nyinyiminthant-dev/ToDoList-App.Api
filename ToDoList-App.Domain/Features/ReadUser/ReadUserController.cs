@@ -39,4 +39,28 @@ public class ReadUserController : ControllerBase
             return StatusCode(500, ex.Message);
         }
     }
+
+
+    [HttpGet("GetUserByEmail")]
+
+    public async Task<IActionResult> GetUserByEmail(string email)
+    {
+        try
+        {
+            UserResponseModel model = new UserResponseModel();
+            var response = await _service.GetUserByEmail(email);
+            if (!response.IsSuccess)
+            {
+                return BadRequest(response.Message);
+            }
+            model.IsSuccess = true;
+            model.Message = response.Message;
+            model.Data = response.Data;
+            return Ok(model);
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(500, ex.Message);
+        }
+    }
 }

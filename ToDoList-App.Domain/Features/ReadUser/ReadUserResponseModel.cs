@@ -13,3 +13,10 @@ public class ReadUserResponseModel
     public string Message { get; set; }
     public List<User> Data { get; set; }
 }
+
+public class UserResponseModel
+{
+    public bool IsSuccess { get; set; }
+    public string Message { get; set; }
+    public User Data { get; set; }
+}
