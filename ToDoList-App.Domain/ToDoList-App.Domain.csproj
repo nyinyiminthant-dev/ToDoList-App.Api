@@ -8,13 +8,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Features\AddCategory\" />
-    <Folder Include="Features\AddTask\" />
     <Folder Include="Features\EidtCategory\" />
     <Folder Include="Features\EidtTask\" />
     <Folder Include="Features\ReadTask\" />
     <Folder Include="Features\ReadCategory\" />
-    <Folder Include="Features\UserLogin\" />
   </ItemGroup>
 
 
