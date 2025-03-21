@@ -44,7 +44,7 @@ public class AppDbContext : DbContext
             entity.Property(e => e.Password).IsRequired().HasMaxLength(50);
             entity.Property(e => e.Role).IsRequired().HasMaxLength(50);
             entity.Property(e => e.Status).IsRequired().HasMaxLength(50);
-            entity.Property(e => e.OTP).IsRequired().HasMaxLength(50);
+            entity.Property(e => e.OTP).HasMaxLength(50);
             entity.Property(e => e.Otp_Exp).IsRequired();
         });
 

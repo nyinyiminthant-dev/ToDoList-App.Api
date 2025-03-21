@@ -12,7 +12,6 @@
     <Folder Include="Features\AddTask\" />
     <Folder Include="Features\EidtCategory\" />
     <Folder Include="Features\EidtTask\" />
-    <Folder Include="Features\ReadUser\" />
     <Folder Include="Features\ReadTask\" />
     <Folder Include="Features\ReadCategory\" />
     <Folder Include="Features\UserLogin\" />

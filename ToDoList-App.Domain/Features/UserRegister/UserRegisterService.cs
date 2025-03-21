@@ -137,7 +137,7 @@ public class UserRegisterService
         }
 
         user.Status = "Y";
-        user.OTP = null;
+        user.OTP = "-.-.-.-.-.-";
         user.Otp_Exp = DateTime.Now;
         _db.Entry(user).State = EntityState.Modified;
        int result =  await _db.SaveChangesAsync();

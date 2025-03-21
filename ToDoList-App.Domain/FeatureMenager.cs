@@ -4,6 +4,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
 using ToDoList_App.Database.AppDbContextModels;
+using ToDoList_App.Domain.Features.ReadUser;
 using ToDoList_App.Domain.Features.UserRegister;
 
 namespace ToDoList_App.Domain;
@@ -23,6 +24,10 @@ public static class FeatureMenager
         //Please write each services in their services region A Ma May and Ko gye Sit Ning Htoo
         #region Add Services
         builder.Services.AddScoped<UserRegisterService>();
+        #endregion
+
+        #region Read Services
+        builder.Services.AddScoped<ReadUserService>();
         #endregion
 
         #region Update Services
