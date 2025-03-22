@@ -4,6 +4,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
 using ToDoList_App.Database.AppDbContextModels;
+using ToDoList_App.Domain.Features.BanUser;
 using ToDoList_App.Domain.Features.ReadUser;
 using ToDoList_App.Domain.Features.UserRegister;
 
@@ -37,6 +38,10 @@ public static class FeatureMenager
         #endregion
 
         #region Delete Services
+        #endregion
+
+        #region Deactive Services
+        builder.Services.AddScoped<BanUserService>();
         #endregion
 
     }
