@@ -36,7 +36,7 @@ public class UserLoginController : ControllerBase
             model.IsSuccess = true;
             model.Message = result.Message;
             return Ok(model);
-        }
+        }  
         catch (Exception ex)
         {
            return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
