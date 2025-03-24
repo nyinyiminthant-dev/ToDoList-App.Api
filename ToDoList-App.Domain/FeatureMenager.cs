@@ -7,6 +7,7 @@ using ToDoList_App.Database.AppDbContextModels;
 using ToDoList_App.Domain.Features.AddGoal;
 using ToDoList_App.Domain.Features.BanUser;
 using ToDoList_App.Domain.Features.ReadUser;
+using ToDoList_App.Domain.Features.UserLogin;
 using ToDoList_App.Domain.Features.UserRegister;
 
 namespace ToDoList_App.Domain;
@@ -44,6 +45,10 @@ public static class FeatureMenager
 
         #region Deactive Services
         builder.Services.AddScoped<BanUserService>();
+        #endregion
+
+        #region Login Services
+        builder.Services.AddScoped<UserLoginService>();
         #endregion
 
     }
