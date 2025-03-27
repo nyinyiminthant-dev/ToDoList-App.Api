@@ -8,8 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Features\EidtCategory\" />
-    <Folder Include="Features\EidtTask\" />
+    <Folder Include="Features\UpdateTask\" />
     <Folder Include="Features\ReadTask\" />
   </ItemGroup>
 
