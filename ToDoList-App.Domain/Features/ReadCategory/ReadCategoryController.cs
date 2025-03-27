@@ -48,4 +48,28 @@ public class ReadCategoryController : ControllerBase
         }
     }
 
+    [HttpGet("{id}")]
+
+    public async Task<IActionResult> EidtCatgory(int id)
+    {
+        try
+        {
+            CategoryResponseModel model = new CategoryResponseModel();
+            var item = await _service.ReadCategory(id);
+            if (!item.IsSuccess)
+            {
+                model.IsSuccess = false;
+                model.Message = item.Message;
+            }
+            model.IsSuccess = true;
+            model.Message = "Success";
+            model.Categories = item.Categories;
+            return Ok(model);
+        }
+        catch (Exception e)
+        {
+            return BadRequest(e.Message);
+        }
+    }
+
 }

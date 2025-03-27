@@ -13,3 +13,10 @@ public class ReadCategoryResponseModel
     public string Message { get; set; }
     public List<Category> Categories { get; set; }
 }
+
+public class CategoryResponseModel
+{
+    public bool IsSuccess { get; set; }
+    public string Message { get; set; }
+    public Category Categories { get; set; }
+}
