@@ -8,6 +8,7 @@ namespace ToDoList_App.Domain.Features.AddCategory;
 
 public class AddCategoryRequestModel
 {
-    public string Name { get; set; }
-    public string Status { get; set; }
+    public string Category_Name { get; set; }
+    public string Description { get; set; }
+
 }

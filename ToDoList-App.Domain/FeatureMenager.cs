@@ -4,6 +4,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
 using ToDoList_App.Database.AppDbContextModels;
+using ToDoList_App.Domain.Features.AddCategory;
 using ToDoList_App.Domain.Features.AddGoal;
 using ToDoList_App.Domain.Features.BanUser;
 using ToDoList_App.Domain.Features.ReadUser;
@@ -28,6 +29,7 @@ public static class FeatureMenager
         #region Add Services
         builder.Services.AddScoped<UserRegisterService>();
         builder.Services.AddScoped<AddGoalService>();
+        builder.Services.AddScoped<AddCategoryService>();
         #endregion
 
         #region Read Services

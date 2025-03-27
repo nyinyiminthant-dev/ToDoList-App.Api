@@ -22,8 +22,9 @@ public class AddCategoryService
 
         var item = new Category()
         {
-           Name = requestModel.Name,
-           Status = requestModel.Status
+           Category_Name = requestModel.Category_Name,
+            Description = requestModel.Description,
+            Status = "A"
         };
 
            await _db.Categories.AddAsync(item);

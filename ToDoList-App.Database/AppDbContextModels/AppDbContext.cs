@@ -31,7 +31,8 @@ public class AppDbContext : DbContext
         modelBuilder.Entity<Category>(entity =>
         {
             entity.HasKey(e => e.Id);
-            entity.Property(e => e.Name).IsRequired().HasMaxLength(50);
+            entity.Property(e => e.Category_Name).IsRequired().HasMaxLength(50);
+            entity.Property(entity => entity.Description).IsRequired().HasMaxLength(50);
             entity.Property(e => e.Status).IsRequired().HasMaxLength(10);
         });
 
