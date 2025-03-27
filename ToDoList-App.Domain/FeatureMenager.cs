@@ -7,6 +7,7 @@ using ToDoList_App.Database.AppDbContextModels;
 using ToDoList_App.Domain.Features.AddCategory;
 using ToDoList_App.Domain.Features.AddGoal;
 using ToDoList_App.Domain.Features.BanUser;
+using ToDoList_App.Domain.Features.ReadCategory;
 using ToDoList_App.Domain.Features.ReadUser;
 using ToDoList_App.Domain.Features.UserLogin;
 using ToDoList_App.Domain.Features.UserRegister;
@@ -34,6 +35,7 @@ public static class FeatureMenager
 
         #region Read Services
         builder.Services.AddScoped<ReadUserService>();
+        builder.Services.AddScoped<ReadCategoryService>();
         #endregion
 
         #region Update Services
