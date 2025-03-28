@@ -18,7 +18,7 @@ public class AddTaskService
         _db = db;
     }
 
-    public async Task<AddTaskResponseModel> InsertTask(AddTaskRequestModel requestModel)
+    public async Task<AddTaskResponseModel> Insert(AddTaskRequestModel requestModel)
     {
         AddTaskResponseModel model = new AddTaskResponseModel();
 
@@ -44,7 +44,7 @@ public class AddTaskService
         {
             TaskName = requestModel.TaskName,
             dateTime = requestModel.dateTime,
-            Status = "A",
+            Status = "start",
             Priority = requestModel.Priority,
             C_Id = requestModel.C_Id
 
@@ -56,6 +56,7 @@ public class AddTaskService
         string message = result > 0 ? "Task Added" : "Task not Added";
         model.Message = message;
         model.IsSuccess = result > 0;
+        
         
 
         return model;

@@ -19,5 +19,32 @@ public class AddTaskController : ControllerBase
         _service = service;
     }
 
+    [HttpPost]
 
+    public async Task<IActionResult> AddTask(AddTaskRequestModel requestModel)
+    {
+        try
+        {
+            AddTaskResponseModel model = new AddTaskResponseModel();
+            var result = await _service.Insert(requestModel);
+
+            if (!result.IsSuccess)
+            {
+                model.IsSuccess = false;
+                model.Message = result.Message;
+                return BadRequest(model);
+            }
+
+            model.IsSuccess = true;
+            model.Message = result.Message;
+            
+
+            return Ok(result);
+        }
+        catch (Exception e)
+        {
+            return BadRequest(e.Message);
+
+        }
+    }
 }
