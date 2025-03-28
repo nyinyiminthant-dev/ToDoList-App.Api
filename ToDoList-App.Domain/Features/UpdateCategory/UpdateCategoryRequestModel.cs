@@ -8,5 +8,7 @@ namespace ToDoList_App.Domain.Features.UpdateCategory;
 
 public class UpdateCategoryRequestModel
 {
-    public string CateogryName { get; set; }    
+    public string Category_Name { get; set; }
+
+    public string Description { get; set; }
 }

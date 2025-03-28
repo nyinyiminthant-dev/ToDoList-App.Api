@@ -17,7 +17,7 @@ public class UpdateCategoryService
         _db = db;
     }
 
-    public async Task<UpdateCategoryReponseModel> UpdateCategory(int id,UpdateCategoryRequestModel request)
+    public async Task<UpdateCategoryReponseModel> UpdateCategory(int id,UpdateCategoryRequestModel requestModel)
     {
         UpdateCategoryReponseModel model = new UpdateCategoryReponseModel();
         var item = await _db.Categories.AsNoTracking().FirstOrDefaultAsync(x => x.Id == id);
@@ -28,10 +28,15 @@ public class UpdateCategoryService
             model.Message = "Category not found";
             return model;
         }
-
-        if(!string.IsNullOrEmpty(request.CateogryName))
+            
+        if(!string.IsNullOrEmpty(requestModel.Category_Name))
         {
-           item.Category_Name = request.CateogryName;
+           item.Category_Name = requestModel.Category_Name;
+        }
+
+        if(!string.IsNullOrEmpty(requestModel.Description))
+        {
+            item.Description = requestModel.Description;
         }
 
         _db.Entry(item).State = EntityState.Modified;

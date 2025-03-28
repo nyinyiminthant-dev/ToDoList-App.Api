@@ -8,4 +8,7 @@ namespace ToDoList_App.Domain.Features.AddTask;
 
 public class AddTaskResponseModel
 {
+    public bool IsSuccess { get; set; }
+    public string Message { get; set; }
+    public Task? Data { get; set; }
 }

@@ -21,18 +21,17 @@ public class UpdateCategoryController : ControllerBase
 
     [HttpPatch("{id}")]
 
-    public async Task<IActionResult> UpdateCategory(int id, UpdateCategoryRequestModel request)
+    public async Task<IActionResult> UpdateCategory(int id, UpdateCategoryRequestModel requestModel)
     {
         try
         {
-            UpdateCategoryReponseModel model = await _service.UpdateCategory(id, request);
-            var item = _service.UpdateCategory(id, request);
+            UpdateCategoryReponseModel model =  new UpdateCategoryReponseModel();
 
+            var item = await _service.UpdateCategory(id, requestModel);
             if (item is null)
             {
                 model.IsSuccess = false;
                 model.Message = "Category not found";
-                model.Data = null;
             }
 
             model.IsSuccess = true;
