@@ -37,9 +37,9 @@ public class AddTaskController : ControllerBase
 
             model.IsSuccess = true;
             model.Message = result.Message;
-            
+            model.Data = result.Data;
 
-            return Ok(result);
+            return Ok(model);
         }
         catch (Exception e)
         {

@@ -35,7 +35,7 @@ public class AddCategoryController : ControllerBase
             }
 
             model.IsSuccess = true;
-            model.Message = model.Message;
+            model.Message = result.Message;
             model.Data =result.Data;
 
 
