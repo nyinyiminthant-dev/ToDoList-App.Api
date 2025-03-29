@@ -56,6 +56,7 @@ public class AddTaskService
         string message = result > 0 ? "Task Added" : "Task not Added";
         model.Message = message;
         model.IsSuccess = result > 0;
+        model.Data = item;
         
         
 
