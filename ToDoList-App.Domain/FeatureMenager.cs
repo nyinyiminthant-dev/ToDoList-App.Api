@@ -9,6 +9,8 @@ using ToDoList_App.Domain.Features.AddGoal;
 using ToDoList_App.Domain.Features.AddTask;
 using ToDoList_App.Domain.Features.BanUser;
 using ToDoList_App.Domain.Features.ReadCategory;
+using ToDoList_App.Domain.Features.ReadTask;
+using ToDoList_App.Domain.Features.ReadTaskByCategory;
 using ToDoList_App.Domain.Features.ReadUser;
 using ToDoList_App.Domain.Features.UpdateCategory;
 using ToDoList_App.Domain.Features.UserLogin;
@@ -39,6 +41,8 @@ public static class FeatureMenager
         #region Read Services
         builder.Services.AddScoped<ReadUserService>();
         builder.Services.AddScoped<ReadCategoryService>();
+        builder.Services.AddScoped<ReadTaskService>();
+        builder.Services.AddScoped<ReadTaskByCategoryService>();
         #endregion
 
         #region Update Services
