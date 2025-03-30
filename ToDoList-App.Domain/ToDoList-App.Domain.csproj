@@ -7,10 +7,6 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Folder Include="Features\UpdateTask\" />
-  </ItemGroup>
-
 
 	<ItemGroup>
 		<FrameworkReference Include="Microsoft.AspNetCore.App" />

@@ -13,6 +13,7 @@ using ToDoList_App.Domain.Features.ReadTask;
 using ToDoList_App.Domain.Features.ReadTaskByCategory;
 using ToDoList_App.Domain.Features.ReadUser;
 using ToDoList_App.Domain.Features.UpdateCategory;
+using ToDoList_App.Domain.Features.UpdateTask;
 using ToDoList_App.Domain.Features.UserLogin;
 using ToDoList_App.Domain.Features.UserRegister;
 
@@ -47,6 +48,7 @@ public static class FeatureMenager
 
         #region Update Services
         builder.Services.AddScoped<UpdateCategoryService>();
+        builder.Services.AddScoped<UpdateTaskService>();
         #endregion
 
         #region Eidt Services
