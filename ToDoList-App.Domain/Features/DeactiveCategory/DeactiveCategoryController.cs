@@ -19,7 +19,7 @@ public class DeactiveCategoryController : ControllerBase
     }
 
     [HttpPatch("{id}")]
-    public async Task<ActionResult<DeactiveCategoryResponseModel>> DeactiveCategory(int id)
+    public async Task<IActionResult> DeactiveCategory(int id)
     {
         try
         {

@@ -40,6 +40,13 @@ public class AddTaskService
             return model;
         }
 
+        if(c_id.Status == "D")
+        {
+            model.IsSuccess = false;
+            model.Message = "Category is deactivated";
+            return model;
+        }
+
         var item = new Task
         {
             TaskName = requestModel.TaskName,
