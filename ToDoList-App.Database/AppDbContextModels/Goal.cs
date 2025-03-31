@@ -9,6 +9,7 @@ namespace ToDoList_App.Database.AppDbContextModels;
 public class Goal
 {
     public int Id { get; set; }
+    public string GoalName { get; set; }
     public string Status { get; set; }
     public DateTime DateTime { get; set; }
     public int Duration { get; set; }

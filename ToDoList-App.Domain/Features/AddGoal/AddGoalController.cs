@@ -12,5 +12,39 @@ namespace ToDoList_App.Domain.Features.AddGoal;
 [ApiController]
 public class AddGoalController : ControllerBase
 {
-    
+    private readonly AddGoalService _service;
+
+    public AddGoalController(AddGoalService service)
+    {
+        _service = service;
+    }
+
+    [HttpPost]
+    public async Task<IActionResult> InsertGoal(AddGoalRequestModel requestModel)
+    {
+        try
+        {
+            AddGoalResponseModel model = new AddGoalResponseModel();
+
+            var response = await _service.Insert(requestModel);
+
+            if (!response.IsSuccess)
+            {
+                model.IsSuccess = false;
+                model.Message = response.Message;
+                model.Data = null;
+
+                return BadRequest(model);
+            }
+
+            model.IsSuccess = true;
+            model.Message = response.Message;
+            model.Data = response.Data;
+            return Ok(model);
+        }
+        catch (Exception e)
+        {
+            return BadRequest(e.Message);
+        }
+    }
 }

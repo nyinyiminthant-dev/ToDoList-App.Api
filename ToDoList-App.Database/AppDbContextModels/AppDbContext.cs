@@ -63,6 +63,7 @@ public class AppDbContext : DbContext
         modelBuilder.Entity<Goal>(entity =>
         {
             entity.HasKey(e => e.Id);
+            entity.Property(e => e.GoalName).IsRequired().HasMaxLength(50);
             entity.Property(e => e.Status).IsRequired().HasMaxLength(50);
             entity.Property(e => e.DateTime).IsRequired();
             entity.Property(e => e.Duration).IsRequired();
