@@ -8,6 +8,7 @@ using ToDoList_App.Domain.Features.AddCategory;
 using ToDoList_App.Domain.Features.AddGoal;
 using ToDoList_App.Domain.Features.AddTask;
 using ToDoList_App.Domain.Features.BanUser;
+using ToDoList_App.Domain.Features.DeactiveCategory;
 using ToDoList_App.Domain.Features.ReadCategory;
 using ToDoList_App.Domain.Features.ReadTask;
 using ToDoList_App.Domain.Features.ReadTaskByCategory;
@@ -63,6 +64,7 @@ public static class FeatureMenager
 
         #region Login Services
         builder.Services.AddScoped<UserLoginService>();
+        builder.Services.AddScoped<DeactiveCategoryService>();
         #endregion
 
     }
