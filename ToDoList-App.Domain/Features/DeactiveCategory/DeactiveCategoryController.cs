@@ -11,4 +11,12 @@ namespace ToDoList_App.Domain.Features.DeactiveCategory;
 [ApiController]
 public class DeactiveCategoryController : ControllerBase
 {
+    private readonly DeactiveCategoryService _service;
+
+    public DeactiveCategoryController(DeactiveCategoryService service)
+    {
+        _service = service;
+    }
+
+
 }

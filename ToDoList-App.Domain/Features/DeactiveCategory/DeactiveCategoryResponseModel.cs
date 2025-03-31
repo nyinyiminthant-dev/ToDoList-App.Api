@@ -8,5 +8,6 @@ namespace ToDoList_App.Domain.Features.DeactiveCategory;
 
 public class DeactiveCategoryResponseModel
 {
-
+    public bool IsSuccess { get; set; }
+    public string Message { get; set; }
 }
