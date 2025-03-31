@@ -42,7 +42,7 @@ public class AddGoalService
         string message = result > 0 ? "Goal Added" : "Goal not Added";
         model.Message = message;
         model.IsSuccess = result > 0;
-        model.Data = item;
+        model.Data = item; 
         return model;
 
     }
