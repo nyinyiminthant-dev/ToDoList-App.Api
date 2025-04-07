@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace ToDoList_App.Domain.Features.DeactiveCategory;
 
-[Route("api/DeactiveCategory")]
+[Route("api/DeactivatCategory")]
 [ApiController]
 public class DeactiveCategoryController : ControllerBase
 {

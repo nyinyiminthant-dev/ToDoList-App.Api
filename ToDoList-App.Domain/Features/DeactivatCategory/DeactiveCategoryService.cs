@@ -30,6 +30,13 @@ public class DeactiveCategoryService
             return model;
         }
 
+        if (category.Status == "D")
+        {
+            model.IsSuccess = false;
+            model.Message = "Category is already deactivated";
+            return model;
+        }
+
         category.Status = "D";
         _db.Entry(category).State = EntityState.Modified;
         var result = await _db.SaveChangesAsync();

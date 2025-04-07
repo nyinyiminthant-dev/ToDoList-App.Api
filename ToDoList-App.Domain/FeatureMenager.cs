@@ -9,6 +9,7 @@ using ToDoList_App.Domain.Features.AddGoal;
 using ToDoList_App.Domain.Features.AddTask;
 using ToDoList_App.Domain.Features.BanUser;
 using ToDoList_App.Domain.Features.DeactiveCategory;
+using ToDoList_App.Domain.Features.DeleteCategory;
 using ToDoList_App.Domain.Features.ReadCategory;
 using ToDoList_App.Domain.Features.ReadTask;
 using ToDoList_App.Domain.Features.ReadTaskByCategory;
@@ -56,6 +57,7 @@ public static class FeatureMenager
         #endregion
 
         #region Delete Services
+        builder.Services.AddScoped<DeleteCategoryService>();
         #endregion
 
         #region Deactive Services
